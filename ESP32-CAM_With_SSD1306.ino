@@ -25,6 +25,8 @@ void setup()
   // Initialize I2C with our defined pins
   I2Cbus.begin(I2C_SDA, I2C_SCL, 100000);
 
+  Serial.println("Initialize display");
+
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS))
   {
@@ -32,7 +34,7 @@ void setup()
     while (true);
   }
 
-  Serial.println("Init display");
+  Serial.println("Show 'Hello World!' on display");
   display.clearDisplay();
   display.setCursor(0, 0);
   display.setTextSize(2);
